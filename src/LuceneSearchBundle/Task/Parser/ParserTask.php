@@ -568,8 +568,8 @@ class ParserTask extends AbstractTask
 
             $parserEvent = new HtmlParserEvent($doc, $html, $originalHtml, $params);
             $this->eventDispatcher->dispatch(
-                LuceneSearchEvents::LUCENE_SEARCH_PARSER_HTML_DOCUMENT,
-                $parserEvent
+                $parserEvent,
+                LuceneSearchEvents::LUCENE_SEARCH_PARSER_HTML_DOCUMENT
             );
 
             $doc = $parserEvent->getDocument();

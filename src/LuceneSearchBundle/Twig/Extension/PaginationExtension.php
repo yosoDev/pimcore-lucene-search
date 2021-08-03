@@ -2,7 +2,10 @@
 
 namespace LuceneSearchBundle\Twig\Extension;
 
-class PaginationExtension extends \Twig_Extension
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
+class PaginationExtension extends AbstractExtension
 {
     /**
      * {@inheritdoc}
@@ -10,12 +13,12 @@ class PaginationExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_Function('lucene_search_pagination', [$this, 'getPagination'], [
+            new TwigFunction('lucene_search_pagination', [$this, 'getPagination'], [
                 'needs_environment' => true,
                 'needs_context'     => true,
                 'is_safe'           => ['html']
             ]),
-            new \Twig_Function('lucene_search_pagination_url', [$this, 'getPaginationUrl'], [
+            new TwigFunction('lucene_search_pagination_url', [$this, 'getPaginationUrl'], [
                 'needs_context' => true,
                 'is_safe'       => ['html']
             ]),

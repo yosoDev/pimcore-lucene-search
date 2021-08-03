@@ -4,7 +4,7 @@ namespace LuceneSearchBundle\Organizer\Handler;
 
 use LuceneSearchBundle\Configuration\Configuration;
 use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 abstract class AbstractHandler
 {

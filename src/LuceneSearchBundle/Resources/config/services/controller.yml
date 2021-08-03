@@ -1,20 +1,19 @@
 services:
+    _defaults:
+        public: true
+        autowire: true
+        autoconfigure: true
+
     LuceneSearchBundle\Controller\Admin\SettingsController:
         tags:
             - { name: controller.service_arguments }
 
-    LuceneSearchBundle\Controller\FrontendController:
-        public: true
-        autowire: true
+    LuceneSearchBundle\Controller\FrontendController: ~
 
     LuceneSearchBundle\Controller\AutoCompleteController:
         parent: LuceneSearchBundle\Controller\FrontendController
-        public: true
-        autowire: true
 
     LuceneSearchBundle\Controller\ListController:
         parent: LuceneSearchBundle\Controller\FrontendController
-        public: true
-        autowire: true
         calls:
             - [setHighlighterHelper, ['@LuceneSearchBundle\Helper\HighlighterHelper']]

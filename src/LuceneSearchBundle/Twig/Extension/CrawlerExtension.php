@@ -3,8 +3,10 @@
 namespace LuceneSearchBundle\Twig\Extension;
 
 use LuceneSearchBundle\Tool\CrawlerState;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class CrawlerExtension extends \Twig_Extension
+class CrawlerExtension extends AbstractExtension
 {
     /**
      * @var CrawlerState
@@ -22,7 +24,7 @@ class CrawlerExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_Function('lucene_search_crawler_active', [$this, 'checkCrawlerState'])
+            new TwigFunction('lucene_search_crawler_active', [$this, 'checkCrawlerState'])
         ];
     }
 

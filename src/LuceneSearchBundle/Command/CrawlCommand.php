@@ -44,9 +44,9 @@ class CrawlCommand extends Command
      * @param InputInterface  $input
      * @param OutputInterface $output
      *
-     * @return void
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $consoleLogger = new ConsoleLogger();
         $consoleLogger->setConsoleOutput($output);
@@ -55,11 +55,12 @@ class CrawlCommand extends Command
         try {
             $this->taskManager->processTaskChain(['force' => $input->getOption('force')]);
         } catch (\Exception $e) {
-            $output->writeln(sprintf('<fg=red>LuceneSearch: Error while crawling: %s.</>', $e->getMessage()));
+            $output->writeln(sprintf('<error>LuceneSearch: Error while crawling: %s.</error>', $e->getMessage()));
         }
 
-        $output->writeln('<fg=green>LuceneSearch: Finished crawl.</>');
+        $output->writeln('<info>LuceneSearch: Finished crawl.</info>');
 
+        return self::SUCCESS;
     }
 
 }

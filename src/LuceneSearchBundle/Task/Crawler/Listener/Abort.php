@@ -27,7 +27,7 @@ class Abort
     /**
      * @param Event $event
      */
-    public function checkCrawlerState(Event $event)
+    public function checkCrawlerState(GenericEvent $event)
     {
         if (!file_exists(Configuration::CRAWLER_PROCESS_FILE_PATH)) {
             $this->spider->getDispatcher()->dispatch(LuceneSearchEvents::LUCENE_SEARCH_CRAWLER_INTERRUPTED,
@@ -41,7 +41,7 @@ class Abort
     /**
      * @param Event $event
      */
-    public function stopCrawler(Event $event)
+    public function stopCrawler(GenericEvent $event)
     {
         exit;
     }

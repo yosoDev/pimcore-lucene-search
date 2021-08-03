@@ -315,8 +315,8 @@ class CrawlerTask extends AbstractTask
 
         $event = new CrawlerRequestHeaderEvent();
         $this->eventDispatcher->dispatch(
-            LuceneSearchEvents::LUCENE_SEARCH_CRAWLER_REQUEST_HEADER,
-            $event
+            $event,
+            LuceneSearchEvents::LUCENE_SEARCH_CRAWLER_REQUEST_HEADER
         );
 
         $headerElements = array_merge($defaultHeaderElements, $event->getHeaders());

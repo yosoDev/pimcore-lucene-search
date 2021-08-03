@@ -3,8 +3,10 @@
 namespace LuceneSearchBundle\Twig\Extension;
 
 use LuceneSearchBundle\Configuration\Configuration;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
-class CategoriesExtension extends \Twig_Extension
+class CategoriesExtension extends AbstractExtension
 {
     /**
      * @var Configuration
@@ -27,7 +29,7 @@ class CategoriesExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_Function('lucene_search_get_categories', [$this, 'getCategoriesList'])
+            new TwigFunction('lucene_search_get_categories', [$this, 'getCategoriesList'])
         ];
     }
 

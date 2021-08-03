@@ -2,7 +2,7 @@
     "name": "dachcom-digital/lucene-search",
     "type": "pimcore-bundle",
     "license": "GPL-3.0+",
-    "description": "Pimcore 5.x Website Indexer (powered by Zend Search Lucene)",
+    "description": "Pimcore X Website Indexer (powered by Zend Search Lucene)",
     "keywords": ["pimcore", "search", "lucene"],
     "homepage": "https://github.com/dachcom-digital/pimcore-lucene-search",
     "authors": [
@@ -27,8 +27,8 @@
         }
     },
     "require": {
-        "pimcore/pimcore": "^5.8.0 | ^6.0.0 | ^10.0",
-        "vdb/php-spider": "^0.3 | ^0.4 | ^0.5",
+        "pimcore/pimcore": "^10.0",
+        "vdb/php-spider": "^0.5",
         "zf1/zend-search-lucene": "~1.12"
     }
 }

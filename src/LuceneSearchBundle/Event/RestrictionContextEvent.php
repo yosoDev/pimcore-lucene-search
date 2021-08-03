@@ -2,7 +2,7 @@
 
 namespace LuceneSearchBundle\Event;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Use this event to check current frontend restriction context.
