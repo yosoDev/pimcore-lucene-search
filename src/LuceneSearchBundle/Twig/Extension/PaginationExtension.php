@@ -2,6 +2,7 @@
 
 namespace LuceneSearchBundle\Twig\Extension;
 
+use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -26,7 +27,7 @@ class PaginationExtension extends AbstractExtension
     }
 
     /**
-     * @param \Twig_Environment $environment
+     * @param Environment $environment
      * @param array             $context
      * @param null              $options
      *
@@ -35,7 +36,7 @@ class PaginationExtension extends AbstractExtension
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function getPagination(\Twig_Environment $environment, $context = [], $options = null)
+    public function getPagination(Environment $environment, $context = [], $options = null)
     {
         $defaults = [
             'paginationUrl'      => '',
